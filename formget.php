@@ -63,7 +63,7 @@ if (isset($_GET['id'])){
 					
 					if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
 						echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
-						$qs = $c->query('INSERT INTO magazzini (bene_et_id, magaz_id, totale) VALUES ("'.$beni.'","'.$a.'","'.$quantit.'")');
+						$qs = $c->query('INSERT INTO magazzini (bene_et_id, magaz_id, totale, note) VALUES ("'.$beni.'","'.$a.'","'.$quantit.'","")');
 						$qs = $c->query('INSERT INTO carico (da_magaz_id, magaz_id, bene_et_id, quantit, tecnico_id, timestamp, allegato) VALUES ("'.$da.'","'.$a.'","'.$beni.'","'.$quantit.'","'.$tecnici.'","'.$t.'","'.$nomefile.'");');
 						header("Location: index.php");
 					} else {
@@ -73,7 +73,7 @@ if (isset($_GET['id'])){
 				}
 				
 				} else {
-					$qs = $c->query('INSERT INTO magazzini (bene_et_id, magaz_id, totale) VALUES ("'.$beni.'","'.$a.'","'.$quantit.'")');
+					$qs = $c->query('INSERT INTO magazzini (bene_et_id, magaz_id, totale, note) VALUES ("'.$beni.'","'.$a.'","'.$quantit.'","")');
 					$qs = $c->query('INSERT INTO carico (da_magaz_id, magaz_id, bene_et_id, quantit, tecnico_id, timestamp, allegato) VALUES ("'.$da.'","'.$a.'","'.$beni.'","'.$quantit.'","'.$tecnici.'","'.$t.'","");');
 					header("Location: index.php");
 				}
