@@ -169,12 +169,12 @@ while ($d = $q->fetch_array()){
 
 <br><br>
 
-<button onclick="mostra('car')">Mostra carico</button>
-<button onclick="mostra('scar')">Mostra scarico</button>
+<button onclick="mostra('car')">Carico - Spostamento</button>
+<button onclick="mostra('scar')">Scarico</button>
 
 <div id="car" style="display:none;">
 
-<h3>CARICO</h3>
+<h3>CARICO - SPOSTAMENTO</h3>
 
 <table width="100%"><tr>
 <td><strong>Da</strong></td>
@@ -187,7 +187,7 @@ while ($d = $q->fetch_array()){
 </tr>
 
 <?php
-$q = $x->query("SELECT * FROM carico WHERE magaz_id='$id' ORDER BY id DESC");
+$q = $x->query("SELECT * FROM carico WHERE magaz_id='$id' OR da_magaz_id='$id' ORDER BY id DESC");
 while($d = $q->fetch_array()){
 	
 	echo '<tr>';
