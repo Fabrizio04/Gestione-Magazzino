@@ -71,6 +71,15 @@ table, td, th {
 
 </style>
 
+<script type="text/javascript">
+
+function mostra(id){
+	var a = document.getElementById(id).style;
+	a.display = a.display=='block'?'none':'block'
+}
+
+</script>
+
 </head>
 
 <body bgcolor="#E6E6FA">
@@ -135,6 +144,13 @@ while ($d = $q->fetch_array()){
 </tr>
 
 </table><br><br>
+
+<!-- statistiche -->
+<button onclick="mostra('stat')">Statistiche</button>
+
+<div id="stat" style="display:none;">
+<embed src="statistiche.php" width="100%" height="275">
+</div>
 
 <!-- carico -->
 
@@ -248,7 +264,7 @@ echo '<option value="'.$f['id'].'">'.$f['nome'].'</option>';
 <td>Tipologia (bene)</td>
 <td>Tecnico</td>
 <td>Quantit&agrave;</td>
-<td>Rif-Installazione/N. chiamata</td>
+<td>Rif. installazione/N chiamata</td>
 <td>Utente</td>
 <td>Allegato</td>
 
@@ -312,7 +328,7 @@ echo '<option value="'.$f['id'].'">'.$f['nome'].'</option>';
 </td>
 
 <td>
-<input type="text" id="rif" name="rif" size="25px" required>
+<input type="text" id="rif" name="rif" size="28px" required>
 </td>
 
 <td>
