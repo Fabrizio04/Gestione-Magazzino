@@ -8,7 +8,7 @@ Gestione Magazzino è
 
 ### Info
 
-Versione: 1.0
+Versione: 1.1
 
 Anno: 2018 
 
