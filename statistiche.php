@@ -224,7 +224,7 @@ while($d = $q->fetch_array()){
 	$pos = strpos($now, ''.$mese.'-'.$anno.'');
 	$tecnico_id = $d['tecnico_id'];
 	
-	if (( $pos !== false ) && ( $tecnico_id !== '24' )) {
+	if (( $pos !== false ) && ( $tecnico_id !== '24' )) { // $tecnico_id corrisponde all'ID del tecnico CORREZIONE, che deve essere escluso dal conteggio.
 		
 		echo '<tr style="display:none;">';
 		
