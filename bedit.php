@@ -122,7 +122,7 @@ $d = $q->fetch_array();
 </ul>
 </div>
 
-<h3 style="text-align:center;"><img src="./AntiCopy.png" width="16" height="16"> 2018 Gestione Magazzino by Fabrizio Amorelli e Giulia Sedda</h3>
+<h3 style="text-align:center;"><img src="./AntiCopy.png" width="16" height="16"> 2018 Gestione Magazzino by Fabrizio Amorelli</h3>
 
 </body>
 
