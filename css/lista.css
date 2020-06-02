@@ -1,0 +1,22 @@
+#myUL {
+  list-style-type: none;
+  padding: 1px;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #212121;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 3px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  cursor:pointer;
+}
+
+
+#myUL li a:hover:not(.header) {
+  background-color: #bfbebe;/*#eee*/
+}

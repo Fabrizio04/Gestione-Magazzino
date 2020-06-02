@@ -1,0 +1,131 @@
+@media only screen and (min-width:997px){
+	#barra {
+		display:none;
+	}
+}
+
+#menu {
+ text-align:center;
+}
+
+body{
+	background-color: #d9d9d9;
+}
+
+.mySelect {
+    width: 10%;
+    background: #212121;
+	color: white;
+    text-align-last: center;
+	padding:6px;
+}
+
+
+#arrow {
+  background-color: #212121;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 5%;
+}
+
+#arrow2 {
+  background-color: #212121;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 5%;
+}
+
+input[type=number], input[type=text] {
+	width: 20.2%;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid #ccc;
+}
+
+input[type=submit], #last_selected {
+  background-color: #212121;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 10%;
+}
+
+#res {
+  background-color: #212121;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 10%;
+ }
+
+#res:hover {
+  background-color: #404040;
+  color: white;
+}
+
+input[type=submit]:hover, #last_selected:hover, #arrow:hover {
+  background-color: #404040;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media only screen and (max-width: 996px) {
+	
+	.mySelect {
+		width: 90%;
+		padding:12px;
+	}
+	
+  input[type=submit], input[type=reset], #last_selected {
+    width: 90%;
+    margin-top: 0;
+	margin-top: 1rem;
+  }
+  
+  #arrow {
+    width: 90%;
+    margin-top: 0;
+	margin-top: 1rem;
+  }
+
+    
+  #arrow2 {
+    padding: 12px 20px;
+    width: 90%;
+    margin-top: 0;
+	margin-top: 1rem;
+  }
+  
+  input[type=number],input[type=text] {
+    width: 90%;
+  }
+  
+  .sistema{
+    font-size: 1.5rem;
+  }
+  
+  #new_banner{
+	display:none;
+  }
+}
+
+#mainmenu {
+	overflow: hidden;
+    background-color: #d9d9d9;
+    position: fixed;
+    width: 100%;
+}
