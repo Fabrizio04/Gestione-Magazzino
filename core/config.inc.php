@@ -1,6 +1,6 @@
 <?php
 
-$host = "localhost";
-$username = "root";
+$host = "";
+$username = "";
 $password= "";
-$database = "miomagazzino";
+$database = "";
