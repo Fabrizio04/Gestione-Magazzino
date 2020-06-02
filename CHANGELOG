@@ -1,0 +1,21 @@
+1.2
+- Modificato layout menu con responsive-nav e gruppi per magazzini
+- Inserito Last Update home principale
+- Inserito Chart beni home principale
+- Modificato inserimento note scheda magazzino
+- Modificati log carico/scarico con paginazione scheda magazzino
+- Modificata grafica Form carico/scarico e separata da home principale
+- Aggiunti filtri ricerca reports carico/scarico
+- Aggiunto export csv reports carico/scarico
+- Aggiunta rimozione riga log carico/scarico scheda magazzino e reports
+- Modificate statistiche, aggiunti Charts e filtri per carico/scarico
+- Modificata grafica impostazioni voci e separate
+- Modificata form scarico singolo, aggiunto report scarico con paginazione
+- Aggiunto reload e autorefresh
+- Modificata struttura DB
+
+1.1
+- Aggiunta Form statistiche
+
+1.0
+- Release iniziale (2018)
