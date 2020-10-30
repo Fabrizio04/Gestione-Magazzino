@@ -83,12 +83,12 @@ $q = $c->query("SELECT * FROM magaz WHERE fam='0' AND nome<>'ACQUISTO'");
 
 while($d = $q->fetch_array()){
 	
-	echo '<option value="'.$d['id'].'" '.$selected.'>'.$d['nome'].'</option>';
+	echo '<option value="'.$d['id'].'">'.$d['nome'].'</option>';
 	
 	$q2 = $c->query("SELECT * FROM magaz WHERE fam='{$d['id']}'");
 
 	while($d2 = $q2->fetch_array()){
-		echo '<option value="'.$d2['id'].'" '.$selected2.'>'.$d['nome'].' / '.$d2['nome'].'</option>';
+		echo '<option value="'.$d2['id'].'">'.$d['nome'].' / '.$d2['nome'].'</option>';
 	}
 }
 ?>
@@ -236,6 +236,14 @@ function reload_chart(){
 	var iframe = document.getElementById('gra');
 	iframe.src = "script/carico_chart.php?id="+document.getElementById("zoom").value+"&years="+y+"&da="+da+"&a="+a+"&bene="+beni+"&tec="+tec;
 	
+	for (var j = 0; j < document.getElementById("Beni").options.length; j++) {
+		document.getElementById("Beni").options[j].disabled = false; 
+	}
+	
+	if(document.getElementById("a").value != 'ALL'){
+		updatebeni(a);
+	}
+	
 	setTimeout(function () {
 		segui();
     }, 300);
@@ -250,6 +258,38 @@ function open_tab(){
 	var tec = document.getElementById("Tecnici").value;
 
 	window.open("script/carico_chart.php?id=90&years="+y+"&da="+da+"&a="+a+"&bene="+beni+"&tec="+tec);
+}
+
+function updatebeni(magaz_id){
+	selectBox = document.getElementById('Beni');
+	
+	for (var i = 0; i < selectBox.options.length; i++) { 
+		selectBox.options[i].disabled = true; 
+	}
+	
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "script/beni_form_query.php"); 
+	xhr.onload = function(event){
+		if (event.target.response == "err"){
+			alert('Errore');
+		} else {
+			
+			var res = event.target.response.split("-");			
+				
+			for (var j = 0; j < selectBox.options.length; j++) {
+					
+				for(var i=0; i<res.length; i++){
+					if(selectBox.options[j].value == res[i]){
+						selectBox.options[j].disabled = false; 
+					}
+				}
+			}
+			selectBox.options[0].disabled = false; 
+			
+		}
+	};
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.send("magaz_id="+magaz_id);
 }
 </script>
 

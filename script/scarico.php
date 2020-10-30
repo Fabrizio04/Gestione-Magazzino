@@ -274,6 +274,7 @@ function load_page(){
 	if(num2 >= 1 && num2 <= <?php echo $all_pages; ?>){
 		$("#scar").load('script/scarico.php?x_pag=<?php echo $x_pag; ?>&pag='+num2+'&years='+y+'&da='+da+'&bene='+bene+'&tec='+tec);
 		location.href="#scar";
+		changebene();
 	}
 }
 
@@ -290,9 +291,12 @@ function reload_tot_row(){
 		$("#scar").load('script/scarico.php?years='+y+'&da='+da+'&bene='+bene+'&tec='+tec);
 	}
 	
+	changebene();
+	
 }
 function up_page(url){
 	$("#scar").load('script/scarico.php'+url);
+	changebene();
 }
 
 function remove_scar(id){
@@ -324,10 +328,21 @@ function remove_scar(id){
 				} else {
 					$("#scar").load('script/scarico.php?x_pag=ALL&years='+y+'&da='+da+'&bene='+bene+'&tec='+tec);
 				}
+				
+				changebene();
 			}
 		};
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhr.send("id="+id);
+	}
+}
+
+function changebene(){
+	if(document.getElementById("da").value != "ALL"){
+		setTimeout(function () {
+			updatebeni(document.getElementById("da").value);
+			document.getElementById("Beni").options[0].disabled = false; 
+		}, 300);
 	}
 }
 </script>

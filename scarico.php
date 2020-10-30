@@ -70,14 +70,17 @@ function refresh_table(){
 		var da = document.getElementById("da_magaz").value;
 		var bene = document.getElementById("bene_id").value;
 		var tec = document.getElementById("tecnico_id").value;
-		
 		$("#scar").load('script/scarico.php?x_pag='+x_pag+'&pag='+n_pag+'&years='+y+'&da='+da+'&bene='+bene+'&tec='+tec);
+		changebene();
+		
 	} else {
 		var y = document.getElementById("years").value;
 		var da = document.getElementById("da").value;
 		var bene = document.getElementById("Beni").value;
 		var tec = document.getElementById("Tecnici").value;
 		$("#scar").load('script/scarico.php?years='+y+'&da='+da+'&bene='+bene+'&tec='+tec);
+		changebene();
+		
 	}
 	
 }
@@ -152,6 +155,37 @@ function exp(){
 		location.href='script/export.php?id=2&x_pag='+x_pag+'&pag='+n_pag+'&years='+y+'&da='+da+'&bene='+bene+'&tec='+tec
 	}
 	
+}
+
+function updatebeni(magaz_id){
+	selectBox = document.getElementById('Beni');
+	
+	for (var i = 0; i < selectBox.options.length; i++) { 
+		selectBox.options[i].disabled = true; 
+	}
+	
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "script/beni_form_query.php"); 
+	xhr.onload = function(event){
+		if (event.target.response == "err"){
+			alert('Errore');
+		} else {
+			
+			var res = event.target.response.split("-");			
+				
+			for (var j = 0; j < selectBox.options.length; j++) {
+					
+				for(var i=0; i<res.length; i++){
+					if(selectBox.options[j].value == res[i]){
+						selectBox.options[j].disabled = false; 
+					}
+				}
+			}
+			
+		}
+	};
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.send("magaz_id="+magaz_id);
 }
 </script>
 

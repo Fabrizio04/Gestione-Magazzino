@@ -14,7 +14,7 @@ $c = new mysqli($host,$username,$password,$database);
   
   <tbody>
 	<?php
-	$q = $c->query("SELECT * FROM etichette");
+	$q = $c->query('SELECT * FROM etichette WHERE magaz_tag LIKE \'%-'.$_GET['id'].'-%\' OR magaz_tag LIKE \'%ALL%\' ORDER BY campo');
 	
 	while ($d = $q->fetch_array()){
 		

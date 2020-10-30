@@ -10,7 +10,7 @@ $c = new mysqli($host,$username,$password,$database);
 $form .= '<form action="script/formget.php" method="post" id="myForm" name="scarico" enctype="multipart/form-data" onsubmit="return checkfile();">
 
 <div class="row">
-<select name="da" id="da" required class="mySelect">
+<select name="da" id="da" required class="mySelect" onchange="updatebeni(this.value)">
 <option value="">DA:</option>';
 
 $q = $c->query("SELECT * FROM magaz WHERE fam='0' AND nome<>'ACQUISTO'");
@@ -321,6 +321,39 @@ function checkfile(){
 function remove_File() {
 	document.getElementById('file').value = "";
 	document.getElementById('nome').innerHTML = "";
+}
+
+function updatebeni(magaz_id){
+	selectBox = document.getElementById('Beni');
+	
+	selectBox.selectedIndex = "0";
+	
+	for (var i = 0; i < selectBox.options.length; i++) { 
+		selectBox.options[i].disabled = true; 
+	}
+	
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "script/beni_form_query.php"); 
+	xhr.onload = function(event){
+		if (event.target.response == "err"){
+			alert('Errore');
+		} else {
+			
+			var res = event.target.response.split("-");			
+				
+			for (var j = 0; j < selectBox.options.length; j++) {
+					
+				for(var i=0; i<res.length; i++){
+					if(selectBox.options[j].value == res[i]){
+						selectBox.options[j].disabled = false; 
+					}
+				}
+			}
+			
+		}
+	};
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.send("magaz_id="+magaz_id);
 }
 </script>
 

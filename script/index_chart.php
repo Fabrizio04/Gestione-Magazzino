@@ -71,12 +71,17 @@
 			$q2 = $c->query("SELECT * FROM magaz WHERE nome<>'ACQUISTO'");
 			while ($d2 = $q2->fetch_array()){
 				
+				$count = conteggio($d2['id']);
+				$hidden = "false";
+				if($count == "0,0,0,0,0,0,0,0,0,0,0,") $hidden = "true";
+				
 				echo "{
 				label: '{$c->real_escape_string($d2['nome'])}',
 				backgroundColor: color(window.chartColors.colore{$i}).alpha(0.5).rgbString(),
 				borderColor: window.chartColors.colore{$i},
 				borderWidth: 1,
-				data: [".conteggio($d2['id'])."]
+				data: [".$count."],
+				hidden: $hidden
 			},";
 			$i++;
 			}

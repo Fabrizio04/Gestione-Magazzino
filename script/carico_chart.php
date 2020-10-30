@@ -58,6 +58,7 @@
 					if ($q->num_rows > 0){
 						$d = $q->fetch_array();
 						$count .= $d['quantit'].",";
+						
 
 					} else $count .= '0,';
 
@@ -66,17 +67,21 @@
 				return $count;
 			}
 			
+			
 			if ($bene != "ALL") {
 
 				$q2 = $c->query("SELECT * FROM etichette WHERE id = '$bene'");
 				$d2 = $q2->fetch_array();
+				$count = conteggio($bene);
+				$hidden = "false";
 
 				echo "{
 					label: '{$c->real_escape_string($d2['campo'])}',
 					backgroundColor: color(window.chartColors.colore{$i}).alpha(0.5).rgbString(),
 					borderColor: window.chartColors.colore{$i},
 					borderWidth: 1,
-					data: [".conteggio($bene)."]
+					data: [".$count."],
+					hidden: $hidden
 				},";
 
 			} else {
@@ -85,12 +90,17 @@
 				
 				while ($d2 = $q2->fetch_array()){
 					
+					$count = conteggio($d2['id']);
+					$hidden = "false";
+					if($count == ",,,,,,,,,,,,") $hidden = "true";
+					
 					echo "{
 					label: '{$c->real_escape_string($d2['campo'])}',
 					backgroundColor: color(window.chartColors.colore{$i}).alpha(0.5).rgbString(),
 					borderColor: window.chartColors.colore{$i},
 					borderWidth: 1,
-					data: [".conteggio($d2['id'])."]
+					data: [".$count."],
+					hidden: $hidden
 				},";
 				$i++;
 
