@@ -62,7 +62,7 @@
 			</li>
 			<li class="nav-submenu"><a href="#"><span class="fa fa-info-circle"></span> About</a>
 				<ul>
-					<li><a href="manuale/Gestione Magazzino v1.2.pdf" target="_blank"><span class="fa fa-book"></span> Manuale</a></li>
+					<li><a href="manuale/Gestione Magazzino v1.3.pdf" target="_blank"><span class="fa fa-book"></span> Manuale</a></li>
 					<li><a href="info.php"><span class="fa fa-id-card"></span> Contatti</a></li>
 					<li><a href="licenza.php"><span class="fa fa-user"></span> Licenza</a></li>
 				</ul>

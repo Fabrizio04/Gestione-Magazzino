@@ -21,15 +21,15 @@ CREATE TABLE IF NOT EXISTS `carico` (
 
 CREATE TABLE IF NOT EXISTS `etichette` (
   `id` int(11) NOT NULL,
-  `campo` varchar(100) NOT NULL
+  `campo` varchar(100) NOT NULL,
+  `magaz_tag` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 CREATE TABLE IF NOT EXISTS `magaz` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `fam` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `magaz` (`id`, `nome`, `fam`) VALUES
 (1, 'ACQUISTO', 0);
