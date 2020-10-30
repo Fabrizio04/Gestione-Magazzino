@@ -1,3 +1,11 @@
+1.3
+- Aggiunta multi select per magazzini nelle impostazioni beni
+- Modificato inserimento beni
+- Modificata visualizzazione beni magazzino
+- Modificati form magazzino, reports, statistiche (carico/scarico)
+- Modificata visualizzazione Charts home, carico, scarico
+- Modificata struttura DB
+
 1.2
 - Modificato layout menu con responsive-nav e gruppi per magazzini
 - Inserito Last Update home principale
