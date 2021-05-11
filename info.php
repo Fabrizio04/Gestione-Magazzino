@@ -81,8 +81,8 @@ ul {
 <h3><a href="mailto:postmaster@multi-installer.it">postmaster@multi-installer.it</a></h3>
 
 <div class="socialmedia">
-<a href="https://www.youtube.com/channel/UCj1OKw4Me2GCSooYMBC9yMA" target="_blank" title="YouTube" id="yt"><span class="fa fa-youtube fa-fabri"></span></a>
-<a href="https://www.linkedin.com/in/fabrizio-amorelli-ab0a2bb9/" target="_blank" title="LinkedIn" id="lnk"><span class="fa fa-linkedin fa-fabri"></a>
+<a href="https://www.youtube.com/c/FabriTutorial" target="_blank" title="YouTube" id="yt"><span class="fa fa-youtube fa-fabri"></span></a>
+<a href="https://www.linkedin.com/in/fabrizio-amorelli/" target="_blank" title="LinkedIn" id="lnk"><span class="fa fa-linkedin fa-fabri"></a>
 <a href="https://github.com/Fabrizio04" target="_blank" title="GitHub" id="git"><span class="fa fa-github fa-fabri fa-github2"></a>
 </div>
 <br>
