@@ -8,9 +8,9 @@ Gestione Magazzino è
 
 ### Info
 
-Versione: 1.3
+Versione: 1.3.1
 
-Anno: 2018-2020
+Anno: 2018-2021
 
 Released By: Fabrizio Amorelli
 
