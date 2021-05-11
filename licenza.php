@@ -62,7 +62,7 @@ ul {
 <br>
 
 <h3>
-Versione: 1.3
+Versione: 1.3.1
 <br>
 Anno: 2018-2020
 <br>
