@@ -16,3 +16,10 @@ Released By: Fabrizio Amorelli
 
 ### Installazione
 - Consultare il [manuale](manuale/Gestione%20Magazzino%20v1.3.pdf) all'interno della cartella dedicata per le istruzioni d'installazione e d'uso.
+
+
+### Future release
+- Upgrade Chart.js con Rest System
+- Interfaccia tabelle dati nuova
+- Sistema REST API per integrazioni terze
+- Sistema di autenticazione con privilegi utente
