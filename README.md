@@ -20,6 +20,7 @@ Released By: Fabrizio Amorelli
 
 ### Future release
 - Upgrade Chart.js con Rest System
+- Importazione massiva da file csv/xls
 - Interfaccia tabelle dati nuova
 - Sistema REST API per integrazioni terze
 - Sistema di autenticazione con privilegi utente
