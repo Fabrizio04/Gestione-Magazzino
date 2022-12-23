@@ -24,3 +24,4 @@ Released By: Fabrizio Amorelli
 - Interfaccia tabelle dati nuova
 - Sistema REST API per integrazioni terze
 - Sistema di autenticazione con privilegi utente
+- Mobile App Android/iOS Client (Xamarin / .NET MAUI)
